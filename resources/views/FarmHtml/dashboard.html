@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Farm-ILY Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Syne and Poppins Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne:wght@400..800&display=swap" rel="stylesheet">
+
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <div class="dashboard" id="dashboard">
+    <!-- Sidebar -->
+    <div class="sidebar p-4" id="sidebar">
+      <div class="mb-4 d-flex align-items-center gap-2">
+        <img src="images/farm-ily-logo.svg.svg" alt="farm-ily" class="dashboard-logo">
+      </div>
+      <nav class="nav flex-column gap-2">
+        <a href="#" class="nav-link active"><i class="bi bi-grid-fill me-2"></i> Dashboard</a>
+        <a href="#" class="nav-link"><i class="bi bi-person me-2"></i> Profile</a>
+        <!-- Listing Dropdown Toggle -->
+  <a class="nav-link d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#listingDropdown" role="button" aria-expanded="false" aria-controls="listingDropdown">
+    <span><i class="bi bi-list-task me-2"></i> Listing</span>
+    <i class="bi bi-chevron-down"></i>
+  </a>
+
+  <!-- Listing Dropdown Items -->
+  <div class="collapse ps-4" id="listingDropdown">
+    <a href="#" class="nav-link">All Listings</a>
+    <a href="#" class="nav-link">Add New</a>
+    <a href="#" class="nav-link">Categories</a>
+  </div> 
+        <a href="#" class="nav-link"><i class="bi bi-cart me-2"></i> Orders <i class="bi bi-chevron-down float-end"></i></a>
+        <a href="#" class="nav-link"><i class="bi bi-truck-front me-2"></i> Equipment On Rent</a>
+        <a href="#" class="nav-link"><i class="bi bi-journal-text me-2"></i> Package</a>
+        <a href="#" class="nav-link"><i class="bi bi-person-lines-fill me-2"></i> Help</a>
+      </nav>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content">
+      <div class="dashboard-content-area">
+      <!-- Navbar -->
+      <nav class="navbar p-3 mb-4 d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-3">
+          <i class="bi bi-list fs-3 menu-toggle" id="toggleBtn"></i>
+          <h5 class="m-0 fw-semibold">Welcome Back, <span class="text-success">Sam!</span></h5>
+        </div>
+        <div class="dropdown user-info">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+          <div>
+            <div class="user-name">Sam</div>
+            <div class="user-role">Farmer</div>
+          </div>
+          <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"></button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">My Profile</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Dashboard Area (blank for now) -->
+      <div class="container-fluid">
+        <div class="dashboard mb-5">
+  <div class="row g-4">
+    <!-- Total Sales -->
+    <div class="col-md-3">
+      <div class="card">
+        <div class="card-icon light-blue">
+            <img src="images/icons/sales-graph-icon.svg" alt="sales-graph">
+          </div>
+          <div class="card-details">
+            <small class="text-muted">Total Sales</small>
+            <h4 class="mt-2">$50,565</h4>
+          </div>
+      </div>
+    </div>
+
+    <!-- Total Orders -->
+    <div class="col-md-3">
+      <div class="card">
+          <div class="card-icon">
+            <img src="images/icons/cart 1.svg" alt="sales-graph">
+          </div>
+          <div class="card-details">
+            <small class="text-muted">Total Orders</small>
+            <h4 class="mt-2">565</h4>
+          </div>
+      </div>
+    </div>
+
+    <!-- Current Inventory -->
+    <div class="col-md-3">
+      <div class="card">
+          <div class="card-icon">
+            <img src="images/icons/storage-icon.svg" alt="storage">
+          </div>
+          <div class="card-details">
+            <small class="text-muted">Current Inventory</small>
+            <h4 class="mt-2">20,360</h4>
+          </div>
+      </div>
+    </div>
+
+    <!-- Revenue -->
+    <div class="col-md-3">
+      <div class="card">
+          <div class="card-icon">
+            <img src="images/icons/reven.svg" alt="reven-graph">
+          </div>
+          <div class="card-details">
+            <small class="text-muted">Revenue</small>
+            <h4 class="mt-2">$2,225</h4>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="col-md-7"> 
+      
+    <div class="active-package-section mt-4">
+      <ul>
+        <li>
+          <div class="row">
+              <div class="col-md-6">Details</div>
+              <div class="col-md-6">Summary</div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+              <div class="col-md-6">Details</div>
+              <div class="col-md-6">Summary</div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+              <div class="col-md-6">Details</div>
+              <div class="col-md-6">Summary</div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+              <div class="col-md-6">Details</div>
+              <div class="col-md-6">Summary</div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+              <div class="col-md-6">Details</div>
+              <div class="col-md-6">Summary</div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+              <div class="col-md-6">Details</div>
+              <div class="col-md-6">Summary</div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+              <div class="col-md-6">Details</div>
+              <div class="col-md-6">Summary</div>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+
+
+  </div>
+  <div class="col-md-5"> 
+  <div class="my-4 cloud">
+  <div class="card shadow-sm rounded-4 border-0 p-4">
+    <h5 class="fw-bold mb-3">Weather Forecast</h5>
+
+    <!-- Location + Main Weather Info -->
+    <div class="d-flex justify-content-between flex-wrap mb-2">
+      <div>
+        <div class="text-muted">Riverside County, CA</div>
+        <div class="d-flex align-items-center mt-2">
+          <div class="me-2 text-warning fs-4">☀️</div>
+          <div class="fs-4 fw-bold text-dark">78°F</div>
+        </div>
+        <div class="text-muted">Sunny, clear skies</div>
+      </div>
+      <div class="text-end mt-3 mt-md-0">
+        <div class="text-muted">Precipitation</div>
+        <div class="fw-bold text-dark">5%</div>
+        <div class="text-muted mt-2">Humidity</div>
+        <div class="fw-bold text-dark">45%</div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- 5-Day Forecast -->
+    <div class="d-flex justify-content-between text-center">
+      <div>
+        <div class="text-muted">Thu</div>
+        <div class="fs-5">☀️</div>
+        <div class="fw-bold">78°</div>
+      </div>
+      <div>
+        <div class="text-muted">Fri</div>
+        <div class="fs-5">☀️</div>
+        <div class="fw-bold">80°</div>
+      </div>
+      <div>
+        <div class="text-muted">Sat</div>
+        <div class="fs-5">⛅</div>
+        <div class="fw-bold">76°</div>
+      </div>
+      <div>
+        <div class="text-muted">Sun</div>
+        <div class="fs-5">🌧️</div>
+        <div class="fw-bold">72°</div>
+      </div>
+      <div>
+        <div class="text-muted">Mon</div>
+        <div class="fs-5">☀️</div>
+        <div class="fw-bold">75°</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="crops-img">
+  <img src="images/crops.png" alt="crops" class="w-100">
+</div>
+  
+  </div>
+</div>
+
+</div>
+</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    const sidebar = document.getElementById('sidebar');
+    const dashboard = document.getElementById('dashboard');
+
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+      dashboard.classList.toggle('sidebar-hidden');
+    });
+  </script>
+</body>
+</html>
