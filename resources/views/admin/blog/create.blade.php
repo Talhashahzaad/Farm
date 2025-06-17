@@ -4,13 +4,14 @@
     <section class="section">
         <div class="section-header">
             <div class="section-header-back">
-                <a href="{{ route('admin.blog.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
+                <a href="{{ route('admin.dashboard.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
             </div>
             <h1>Blog</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="{{ route('admin.blog.index') }}">Blog</a></div>
                 <div class="breadcrumb-item">Create</div>
+
             </div>
         </div>
 
@@ -27,8 +28,7 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="">Image <span class="text-danger">*</span>
-                                        </label>
+                                        <label for="">Image <span class="text-danger">*</span></label>
                                         <div id="image-preview" class="image-preview">
                                             <label for="image-upload" id="image-label">Choose File</label>
                                             <input type="file" name="image" id="image-upload" />
@@ -38,7 +38,7 @@
 
                                 <div class="form-group">
                                     <label for="">Title <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="title" value="{{ old('title') }}">
+                                    <input type="text" class="form-control" name="title">
                                 </div>
 
                                 <div class="form-group">
@@ -52,9 +52,10 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="">Description </label>
-                                    <textarea name="description" class="summernote" class="form-control"> {{ old('description') }}</textarea>
+                                    <label for="">Description <span class="text-danger">*</span></label>
+                                    <textarea name="description" class="summernote"></textarea>
                                 </div>
+
 
                                 <div class="form-group">
                                     <label for="">Is Popular <span class="text-danger">*</span></label>
@@ -63,6 +64,7 @@
                                         <option value="1">Yes</option>
                                     </select>
                                 </div>
+
                                 <div class="form-group">
                                     <label for="">Status <span class="text-danger">*</span></label>
                                     <select name="status" class="form-control">
@@ -71,9 +73,11 @@
                                     </select>
                                 </div>
 
+
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Create</button>
                                 </div>
+
                             </form>
                         </div>
                     </div>
@@ -83,6 +87,3 @@
         </div>
     </section>
 @endsection
-
-@push('scripts')
-@endpush

@@ -6,11 +6,12 @@
             <div class="section-header-back">
                 <a href="{{ route('admin.category.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
             </div>
-            <h1>Treatment Category</h1>
+            <h1>Category</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="{{ route('admin.category.index') }}">Treatment Category</a></div>
+                <div class="breadcrumb-item"><a href="{{ route('admin.category.index') }}">Category</a></div>
                 <div class="breadcrumb-item">Create</div>
+
             </div>
         </div>
 
@@ -19,7 +20,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Create Treatment Category</h4>
+                            <h4>Create Category</h4>
                         </div>
                         <div class="card-body">
                             <form action="{{ route('admin.category.store') }}" method="POST" enctype="multipart/form-data">
@@ -27,19 +28,17 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Image Icon <span class="text-danger">*</span>
-                                            </label>
+                                            <label for="">Icon Image <span class="text-danger">*</span></label>
                                             <div id="image-preview" class="image-preview">
                                                 <label for="image-upload" id="image-label">Choose File</label>
                                                 <input type="file" name="image_icon" id="image-upload" />
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Background Image <span class="text-danger">*</span>
-                                            </label>
+                                            <label for="">Background Image <span
+                                                    class="text-danger">*</span></label>
                                             <div id="image-preview-2" class="image-preview">
                                                 <label for="image-upload-2" id="image-label-2">Choose File</label>
                                                 <input type="file" name="background_image" id="image-upload-2" />
@@ -47,15 +46,14 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="">Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                    <input type="text" class="form-control" name="name">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="">Show at Home <span class="text-danger">*</span></label>
-                                    <select name="show_at_home" id="" class="form-control">
+                                    <select name="show_at_home" class="form-control">
                                         <option value="0">No</option>
                                         <option value="1">Yes</option>
                                     </select>
@@ -69,25 +67,11 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="">Parent Treatment Category <span
-                                            class="text-danger"></span></label>
-                                    <input type="text" class="form-control" name="parent_category" value="None">
-                                    {{-- <select name="parent_category" class="form-control">
-                                        <option value="none">None</option>
-                                        <option value="hair">Hair</option>
-                                    </select> --}}
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="">Description </label>
-                                    <textarea name="description" class="form-control"> {{ old('description') }}</textarea>
-                                </div>
-
 
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Create</button>
                                 </div>
+
                             </form>
                         </div>
                     </div>

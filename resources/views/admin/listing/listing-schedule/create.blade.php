@@ -4,15 +4,14 @@
     <section class="section">
         <div class="section-header">
             <div class="section-header-back">
-                <a href="{{ route('admin.listing-schedule.index', $listingId) }}" class="btn btn-icon"><i
-                        class="fas fa-arrow-left"></i></a>
+                <a href="{{ route('admin.listing-schedule.index', $listingId) }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
             </div>
             <h1>Listing Schedule</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="{{ route('admin.listing-schedule.index', $listingId) }}">Listing
-                        Schedule</a></div>
+                <div class="breadcrumb-item"><a href="{{ route('admin.listing-schedule.index', $listingId) }}">Listing Schedule</a></div>
                 <div class="breadcrumb-item">Create</div>
+
             </div>
         </div>
 
@@ -21,21 +20,22 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Create Listing Schedule</h4>
+                            <h4>Create Schedule</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('admin.listing-schedule.store', $listingId) }}" method="POST">
+                            <form action="{{ route('admin.listing-schedule.store', $listingId) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+
                                 <div class="form-group">
-                                    <label for="">Days<span class="text-danger">*</span></label>
-                                    <select name="day" id="" class="form-control select2">
+                                    <label for="">Day<span class="text-danger">*</span></label>
+                                    <select name="day" class="form-control select2" required>
                                         <option value="">Choose</option>
                                         @foreach (config('listing-schedule.days') as $day)
                                             <option value="{{ $day }}">{{ $day }}</option>
                                         @endforeach
-
                                     </select>
                                 </div>
+
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -63,6 +63,7 @@
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Create</button>
                                 </div>
+
                             </form>
                         </div>
                     </div>
@@ -86,5 +87,6 @@
             dropdown: true,
             scrollbar: true
         });
+
     </script>
 @endpush

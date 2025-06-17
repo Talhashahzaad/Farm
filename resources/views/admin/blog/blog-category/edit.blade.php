@@ -11,6 +11,7 @@
                 <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="{{ route('admin.blog-category.index') }}">Blog Category</a></div>
                 <div class="breadcrumb-item">Update</div>
+
             </div>
         </div>
 
@@ -19,16 +20,17 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Update Blog Category</h4>
+                            <h4>Update Category</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('admin.blog-category.update', $category->id) }}" method="POST">
+                            <form action="{{ route('admin.blog-category.update', $category->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="form-group">
                                     <label for="">Name <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="name" value="{{ $category->name }}">
                                 </div>
+
 
                                 <div class="form-group">
                                     <label for="">Status <span class="text-danger">*</span></label>
@@ -38,14 +40,11 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="">Description </label>
-                                    <textarea name="description" class="form-control"> {{ $category->description }}</textarea>
-                                </div>
 
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Update</button>
                                 </div>
+
                             </form>
                         </div>
                     </div>
@@ -55,6 +54,3 @@
         </div>
     </section>
 @endsection
-
-@push('scripts')
-@endpush

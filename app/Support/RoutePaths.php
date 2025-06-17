@@ -6,5 +6,5 @@ class RoutePaths
 {
     public const HOME = '/user/dashboard';
     public const ADMIN = '/admin/dashboard';
-    public const LOGIN = '/login';
+    // public const LOGIN = '/login';
 }

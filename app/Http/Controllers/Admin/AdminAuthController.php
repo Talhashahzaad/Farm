@@ -12,31 +12,13 @@ use Illuminate\Support\Facades\Auth;
 class AdminAuthController extends Controller
 {
     //
-    function login(Request $request): View|RedirectResponse
+    function login(): View
     {
-        if (Auth::guard('web')->check()) {
-            return redirect()->route('admin.dashboard.index');
-        }
-        if ($request->session()->has('errors')) {
-            return redirect()->route('login')->with('error', 'Your session has expired. Please log in again.');
-        }
         return view('admin.auth.login');
     }
 
-    function PasswordRequest(): View|RedirectResponse
+    function PasswordRequest(): View
     {
-        if (Auth::guard('web')->check()) {
-            return redirect()->route('admin.dashboard.index');
-        }
         return view('admin.auth.forgot-password');
-    }
-
-    public function logout(Request $request)
-    {
-        Auth::guard('web')->logout();
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        return redirect()->route('admin.login');
     }
 }

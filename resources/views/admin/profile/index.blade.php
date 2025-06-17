@@ -95,42 +95,6 @@
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="">Website</label>
-                                            <input type="text" name="website" class="form-control"
-                                                value="{{ $user->website }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="">Facebook</label>
-                                            <input type="text" name="fb_link" class="form-control"
-                                                value="{{ $user->fb_link }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="">Tiktok</label>
-                                            <input type="text" name="tt_link" class="form-control"
-                                                value="{{ $user->tt_link }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="">YouTube</label>
-                                            <input type="text" name="yt_link" class="form-control"
-                                                value="{{ $user->yt_link }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="">Instagram</label>
-                                            <input type="text" name="ig_link" class="form-control"
-                                                value="{{ $user->ig_link }}">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
                                         <div class="form-group profile-form">
                                             <button type="submit" class="btn btn-primary">Update</button>
                                         </div>

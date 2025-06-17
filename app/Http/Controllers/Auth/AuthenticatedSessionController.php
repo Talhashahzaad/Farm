@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Support\RoutePaths;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,8 +18,9 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): View
     {
-        return view('auth.login');
+        return view('frontend.auth.user-auth.login');
     }
+
 
     /**
      * Handle an incoming authentication request.
@@ -33,6 +35,12 @@ class AuthenticatedSessionController extends Controller
         } else {
             return redirect()->intended(RoutePaths::HOME);
         }
+
+        // return match (Auth::user()->role) {
+        //     'admin' => redirect()->route('admin.dashboard.index'),
+        //     'user' => redirect()->route('user.dashboard.index'),
+        //     default => abort(403),
+        // };
 
         // return redirect()->intended(route('dashboard', absolute: false));
     }

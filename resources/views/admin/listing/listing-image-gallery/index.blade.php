@@ -9,8 +9,9 @@
             <h1>Listing Image Gallery</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></div>
-                <div class="breadcrumb-item active"><a href="{{ route('admin.listing.index') }}">Listing</a></div>
+                <div class="breadcrumb-item"><a href="{{ route('admin.listing.index') }}">Listing</a></div>
                 <div class="breadcrumb-item">Image Gallery</div>
+
             </div>
         </div>
 
@@ -19,11 +20,11 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Image Gallery ( {{ $listingTitle->title }})</h4>
+                            <h4>Image Gallery ( {{ $listingTitle->title }} ) </h4>
+
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('admin.listing-image-gallery.store') }}" method="POST"
-                                enctype="multipart/form-data">
+                            <form action="{{ route('admin.listing-image-gallery.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label for="">Image <code>(Multi image supported)</code></label>
@@ -40,39 +41,40 @@
             </div>
 
         </div>
+
         <div class="section-body">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>All Images</h4>
+                            <h4>All Images </h4>
+
                         </div>
                         <div class="card-body">
                             <table class="table">
                                 <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Image</th>
-                                        <th scope="col">Action</th>
-                                    </tr>
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Action</th>
+                                  </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($images as $image)
-                                        <tr>
-                                            <th scope="row">{{ ++$loop->index }}</th>
-                                            <td>
-                                                <img width="100px" height="100px" src="{{ asset($image->image) }}"
-                                                    alt="">
-                                            </td>
-                                            <td>
-                                                <a href="{{ route('admin.listing-image-gallery.destroy', $image->id) }}"
-                                                    class="btn btn-sm btn-danger delete-item"><i
-                                                        class="fas fa-trash"></i></a>
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                      <th scope="row">{{ ++$loop->index }}</th>
+                                      <td>
+                                        <img width="100px" src="{{ asset($image->image) }}" alt="">
+                                      </td>
+                                      <td>
+                                        <a href="{{ route('admin.listing-image-gallery.destroy', $image->id) }}" class="btn btn-sm btn-danger delete-item"><i class="fas fa-trash"></i></a>
+                                      </td>
+                                    </tr>
                                     @endforeach
+
                                 </tbody>
-                            </table>
+                              </table>
+
                         </div>
                     </div>
                 </div>
@@ -83,4 +85,5 @@
 @endsection
 
 @push('scripts')
+
 @endpush

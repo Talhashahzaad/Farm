@@ -11,6 +11,7 @@
                 <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="{{ route('admin.listing.index') }}">Listing</a></div>
                 <div class="breadcrumb-item">Create</div>
+
             </div>
         </div>
 
@@ -27,19 +28,16 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Image<span class="text-danger">*</span>
-                                            </label>
+                                            <label for="">Image <span class="text-danger">*</span></label>
                                             <div id="image-preview" class="image-preview">
                                                 <label for="image-upload" id="image-label">Choose File</label>
                                                 <input type="file" name="image" id="image-upload" required />
                                             </div>
                                         </div>
                                     </div>
-
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Thumbnail Image <span class="text-danger">*</span>
-                                            </label>
+                                            <label for="">Thumbnail Image <span class="text-danger">*</span></label>
                                             <div id="image-preview-2" class="image-preview">
                                                 <label for="image-upload-2" id="image-label-2">Choose File</label>
                                                 <input type="file" name="thumbnail_image" id="image-upload-2" required />
@@ -56,9 +54,9 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Category<span class="text-danger">*</span></label>
-                                            <select name="category" id="" class="form-control">
-                                                <option value="">Select Category</option>
+                                            <label for="">category <span class="text-danger">*</span></label>
+                                            <select class="form-control" name="category" required>
+                                                <option value="">Select</option>
                                                 @foreach ($categories as $category)
                                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                                 @endforeach
@@ -67,9 +65,9 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="">Location<span class="text-danger">*</span></label>
-                                            <select name="location" id="" class="form-control" required>
-                                                <option value="">Select Location</option>
+                                            <label for="">Location <span class="text-danger">*</span></label>
+                                            <select class="form-control" name="location" required>
+                                                <option value="">Select</option>
                                                 @foreach ($locations as $location)
                                                     <option value="{{ $location->id }}">{{ $location->name }}</option>
                                                 @endforeach
@@ -77,12 +75,12 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <label for="">Address <span class="text-danger">*</span></label>
                                     <input type="text" class="form-control" name="address" value="{{ old('address') }}"
                                         required>
                                 </div>
-
 
                                 <div class="row">
                                     <div class="col-md-6">
@@ -96,9 +94,41 @@
                                         <div class="form-group">
                                             <label for="">Email <span class="text-danger">*</span></label>
                                             <input type="text" class="form-control" name="email"
-                                                value="{{ old('email') }}" required>
+                                                value="{{ old('email') }}"" required>
                                         </div>
                                     </div>
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">Production <span class="text-danger">*</span></label>
+
+                                            <input type="text" class="form-control" name="production"
+                                                value="{{ old('production') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">Capacity <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="capacity"
+                                                value="{{ old('capacity') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">Farm Size <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="farm_size"
+                                                value="{{ old('farm_size') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="">Crop Type <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" name="crop_type"
+                                                value="{{ old('crop_type') }}">
+                                        </div>
+                                    </div>
+
+
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label for="">Website <span class="text-danger"></span></label>
@@ -108,123 +138,69 @@
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Facebook Url <span class="text-danger"></span></label>
-                                            <input type="text" name="facebook_link" class="form-control"
+                                            <label for="">Facebook Link <span class="text-danger"></span></label>
+                                            <input type="text" class="form-control" name="facebook_link"
                                                 value="{{ old('facebook_link') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">Instagram Url <span class="text-danger"></span></label>
-                                            <input type="text" name="instagram_link" class="form-control"
-                                                value="{{ old('instagram_link') }}">
+                                            <label for="">X Link <span class="text-danger"></span></label>
+                                            <input type="text" class="form-control" name="x_link"
+                                                value="{{ old('x_link') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">TikTok Url <span class="text-danger"></span></label>
-                                            <input type="text" name="tiktok_link" class="form-control"
-                                                value="{{ old('tiktok_link') }}">
+                                            <label for="">Linkedin Link <span class="text-danger"></span></label>
+                                            <input type="text" class="form-control" name="linkedin_link"
+                                                value="{{ old('linkedin_link') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="">YouTube Url <span class="text-danger"></span></label>
-                                            <input type="text" name="youtube_link" class="form-control"
-                                                value="{{ old('youtube_link') }}">
+                                            <label for="">Whatsapp Link <span class="text-danger"></span></label>
+                                            <input type="text" class="form-control" name="whatsapp_link"
+                                                value="{{ old('whatsapp_link') }}">
                                         </div>
                                     </div>
-
-
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Professional Affiliations</label>
-                                            <select class="form-control select2" multiple=""
-                                                name="professional_certificates[]">
-                                                @foreach ($certificates as $certificate)
-                                                    <option value="{{ $certificate->id }}">{{ $certificate->name }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <div class="form-group">
-                                                <label for="">Attachment <span class="text-danger"></span></label>
-                                                <input type="file" name="attachment" class="form-control"
-                                                    value="{{ old('attachment') }}">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Choose Practitioner</label>
-                                            <select class="form-control select2" multiple="" name="practitioner[]">
-                                                @foreach ($practitioners as $practitioner)
-                                                    <option value="{{ $practitioner->id }}">{{ $practitioner->name }}
-                                                    </option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Amenities</label>
-
-                                            <select class="form-control select2" multiple="" name="amenities[]">
-                                                @foreach ($amenities as $amenity)
-                                                    <option value="{{ $amenity->id }}">{{ $amenity->name }}</option>
-                                                @endforeach
-                                            </select>
+                                            <label for="">Attachment <span class="text-danger"></span></label>
+                                            <input type="file" class="form-control" name="attachment">
                                         </div>
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <label>Amenities</label>
+                                    <select class="form-control select2" multiple="" name="amenities[]">
+                                        @foreach ($amenities as $amenity)
+                                            <option value="{{ $amenity->id }}">{{ $amenity->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
                                 <div class="form-group">
                                     <label for="">Description <span class="text-danger">*</span></label>
-                                    <textarea name="description" class="summernote" required>  {{ old('description') }}</textarea>
+                                    <textarea name="description" class="summernote" required> </textarea>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="">Google Map Embed Code <span class="text-danger">*</span></label>
-                                    <textarea name="google_map_embed_code" class="form-control">{{ old('google_map_embed_code') }}</textarea>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Tags</label>
-                                            <select class="form-control select2" multiple="" name="tag[]">
-                                                @foreach ($tags as $tag)
-                                                    <option value="{{ $tag->id }}">{{ $tag->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label>Service Booking Capacity</label>
-                                            <input type="text" class="form-control" name="service_capacity"
-                                                value="{{ old('service_capacity') }}" pattern="\d*"
-                                                title="Please enter a positive number"
-                                                oninput="this.value = this.value.replace(/[^0-9]/g, '');">
-                                        </div>
-                                    </div>
+                                    <label for="">Google Map Embed Code <span class="text-danger">(size:
+                                            1000x400)</span></label>
+                                    <textarea name="google_map_embed_code" class="form-control"></textarea>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="">SEO Title <span class="text-danger">*</span></label>
-                                    <input type="text" name="seo_title" class="form-control"
+                                    <label for="">Seo Title <span class="text-danger"></span></label>
+                                    <input type="text" class="form-control" name="seo_title"
                                         value="{{ old('seo_title') }}">
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="">SEO Description <span class="text-danger">*</span></label>
-                                    <textarea name="seo_description" class="form-control">{{ old('seo_description') }}</textarea>
+                                    <label for="">Seo Description <span class="text-danger"></span></label>
+                                    <textarea name="seo_description" class="form-control"></textarea>
                                 </div>
 
                                 <div class="row">
@@ -240,7 +216,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="">Is Featured <span class="text-danger"></span></label>
-                                            <select name="is_featured" class="form-control">
+                                            <select name="is_featured" class="form-control" required>
                                                 <option value="0">No</option>
                                                 <option value="1">Yes</option>
                                             </select>
@@ -249,7 +225,7 @@
                                     <div class="col-md-4">
                                         <div class="form-group">
                                             <label for="">Is Verified <span class="text-danger"></span></label>
-                                            <select name="is_verified" class="form-control">
+                                            <select name="is_verified" class="form-control" required>
                                                 <option value="0">No</option>
                                                 <option value="1">Yes</option>
                                             </select>
@@ -257,9 +233,11 @@
                                     </div>
                                 </div>
 
+
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Create</button>
                                 </div>
+
                             </form>
                         </div>
                     </div>

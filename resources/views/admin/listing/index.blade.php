@@ -6,11 +6,10 @@
             <div class="section-header-back">
                 <a href="{{ route('admin.dashboard.index') }}" class="btn btn-icon"><i class="fas fa-arrow-left"></i></a>
             </div>
-            <h1>Listing </h1>
+            <h1>Listing</h1>
             <div class="section-header-breadcrumb">
                 <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></div>
                 <div class="breadcrumb-item">Listing</div>
-
             </div>
         </div>
 
@@ -19,10 +18,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>All Listings </h4>
+                            <h4>All Listings</h4>
                             <div class="card-header-action">
-                                <a href="{{ route('admin.listing.create') }}" class="btn btn-primary"><i
-                                        class="fas fa-plus"></i> Create</a>
+                                <a href="{{ route('admin.listing.create') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Create</a>
                             </div>
                         </div>
                         <div class="card-body">

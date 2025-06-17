@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="simple-footer">
-                            Copyright &copy; Check A Treatment {{ date('Y') }}
+                            Copyright &copy; Farm-Ily {{ date('Y') }}
                         </div>
                     </div>
                 </div>

@@ -11,6 +11,7 @@
                 <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard.index') }}">Dashboard</a></div>
                 <div class="breadcrumb-item"><a href="{{ route('admin.blog-category.index') }}">Blog Category</a></div>
                 <div class="breadcrumb-item">Create</div>
+
             </div>
         </div>
 
@@ -19,17 +20,17 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Create Blog Category</h4>
+                            <h4>Create Category</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('admin.blog-category.store') }}" method="POST"
-                                enctype="multipart/form-data">
+                            <form action="{{ route('admin.blog-category.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
 
                                 <div class="form-group">
                                     <label for="">Name <span class="text-danger">*</span></label>
-                                    <input type="text" class="form-control" name="name" value="{{ old('name') }}">
+                                    <input type="text" class="form-control" name="name">
                                 </div>
+
 
                                 <div class="form-group">
                                     <label for="">Status <span class="text-danger">*</span></label>
@@ -39,14 +40,11 @@
                                     </select>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="">Description </label>
-                                    <textarea name="description" class="form-control"> {{ old('description') }}</textarea>
-                                </div>
 
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary">Create</button>
                                 </div>
+
                             </form>
                         </div>
                     </div>
@@ -56,6 +54,3 @@
         </div>
     </section>
 @endsection
-
-@push('scripts')
-@endpush

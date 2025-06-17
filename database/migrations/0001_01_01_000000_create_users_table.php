@@ -22,6 +22,12 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
+            $table->text('website')->nullable();
+            $table->text('fb_link')->nullable();
+            $table->text('x_link')->nullable();
+            $table->text('in_link')->nullable();
+            $table->text('wa_link')->nullable();
+            $table->text('insta_link')->nullable();
             $table->string('production')->nullable();
             $table->string('capacity')->nullable();
             $table->string('farm_size')->nullable();

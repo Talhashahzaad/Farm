@@ -13,13 +13,12 @@ class UserTypeMiddleware
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next, string $role): Response
+    public function handle(Request $request, Closure $next, string $userType): Response
     {
-
-        if ($request->user()->role === $role) {
+        if ($request->user()->user_type === $userType) {
             return $next($request);
         }
-        return to_route('dashboard');
-        return $next($request);
+
+        return to_route('user.dashboard');
     }
 }

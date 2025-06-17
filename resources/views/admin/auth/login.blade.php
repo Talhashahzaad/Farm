@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Login &mdash; Check a Treatment</title>
+    <title>Login &mdash;Farm-Ily</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('admin/assets/img/cropped-favicon.png') }}">
 
     <!-- General CSS Files -->
@@ -87,7 +87,7 @@
                         </div>
 
                         <div class="simple-footer">
-                            Copyright &copy; Check A Treatment {{ date('Y') }}
+                            Copyright &copy; Farm-Ily {{ date('Y') }}
                         </div>
                     </div>
                 </div>

@@ -18,10 +18,9 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4>All Blog Categories</h4>
+                            <h4>All Categories</h4>
                             <div class="card-header-action">
-                                <a href="{{ route('admin.blog-category.create') }}" class="btn btn-primary"><i
-                                        class="fas fa-plus"></i> Create</a>
+                                <a href="{{ route('admin.blog-category.create') }}" class="btn btn-primary"><i class="fas fa-plus"></i> Create</a>
                             </div>
                         </div>
                         <div class="card-body">
