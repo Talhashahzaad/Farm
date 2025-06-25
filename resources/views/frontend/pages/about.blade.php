@@ -17,29 +17,31 @@
                             <div class="section-heading">
                                 <img src="{{ asset('frontend/images/icons/heading-icon.svg') }}" alt="heading">
                                 <h2 class="section-title">Our Story</h2>
-                                <p>Lorem ipsum dolor sit amet, qui assum oblique praesent te. Quo ei erant essent scaevola,
-                                    est ut clita dolorem, ei est mazim fuisset scribentur. Mel ut decore salutandi
-                                    intellegam.</p>
+                                <p>FarmFusion is revolutionizing the agricultural landscape by empowering small and
+                                    mid-sized farmers through a cutting-edge digital marketplace. With our platform, farmers
+                                    break free from the constraints of unnecessary middlemen, unpredictable pricing, and
+                                    limited market access. These hurdles often undermine their profit margins and create
+                                    anxiety around transactions. At FarmFusion, we are committed to changing this narrative.
+                                    Our user-friendly platform simplifies every step—from showcasing farm produce to
+                                    ensuring timely delivery—while guaranteeing fair pricing, secure payment transactions,
+                                    and dependable logistics. Farmers can effortlessly create profiles, list their crops or
+                                    equipment, and connect in real-time with vetted buyers based on location, product type,
+                                    and pricing. Distributors and retailers benefit from direct access to high-quality
+                                    supplies without the hassles of traditional sourcing methods. But FarmFusion is more
+                                    than just a marketplace. We offer powerful tools such as escrow services, mobile
+                                    dashboards, and analytics, all designed to promote innovative, transparent, and secure
+                                    trading. Whether it's renting equipment, coordinating transport, or fulfilling large
+                                    orders, we empower both farmers and buyers to engage confidently. We envision an
+                                    agricultural sector that is equitable, efficient, and modern. By working hand-in-hand
+                                    with local cooperatives, NGOs, financial institutions, and development partners, we
+                                    expand market access and provide vital training to support the farmers who need it most.
+                                    By merging people, products, and technology, FarmFusion is creating a thriving
+                                    agricultural economy that boosts farm incomes and ensures quality food reaches markets
+                                    quickly, safely, and transparently. Join us in shaping the future of farming—together,
+                                    we can create a brighter tomorrow!</p>
                             </div>
 
-                            <h3>sub-Heading</h3>
-                            <p>Lorem ipsum dolor sit amet, qui assum oblique praesent te. Quo ei erant essent scaevola, est
-                                ut clita dolorem, ei est mazim fuisset scribentur. Mel ut decore salutandi intellegam.</p>
 
-                            <ul>
-                                <li>Quo ei erant essent scaevola, est ut clita dolorem, ei est mazim fuisset scribentur.
-                                </li>
-                                <li>Mel ut decore salutandi intellegam. Labitur epicurei vis cu, in mei rationibus
-                                    consequuntur.</li>
-                                <li>Laudem cetero principes at eam. Ne sit latine appetere erroribus</li>
-                                <li>Dolor sit amet, qui assum oblique praesent te. Quo ei erant essent scaevola</li>
-                                <li>Decore salutandi intellegam. Labitur epicurei vis cu, in mei rationibus consequuntur.
-                                </li>
-                                <li>cCnsequuntur duo eu modus periculis, inermis detracto expetendis ius eu.</li>
-                            </ul>
-
-                            <p>Lorem ipsum dolor sit amet, qui assum oblique praesent te. Quo ei erant essent scaevola, est
-                                ut clita dolorem, ei est mazim fuisset scribentur. Mel ut decore salutandi intellegam.</p>
 
                         </div>
                     </div>

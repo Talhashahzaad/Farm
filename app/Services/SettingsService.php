@@ -25,4 +25,19 @@ class SettingsService
     {
         Cache::forget('settings');
     }
+
+    // public function editSettings(SettingsService $settingsService)
+    // {
+    //     $settings = $settingsService->getSettings();
+    //     return view('admin.setting.sections.general-settings', compact('settings'));
+    // }
+
+    public function boot(SettingsService $settingsService)
+    {
+        if (app()->runningInConsole()) {
+            return; // avoid during artisan commands like migrate
+        }
+
+        $settingsService->setGlobalSettings(); // ✅ inject config('settings') values at runtime
+    }
 }

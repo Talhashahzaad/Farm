@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farm-Ily</title>
+    <title>{{ config('settings.site_name') }}</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('frontend/images/fav-icon.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ config('settings.favicon') }}">
 
     <!-- Syne and Poppins Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

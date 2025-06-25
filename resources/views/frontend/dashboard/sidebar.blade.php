@@ -23,9 +23,15 @@
             <a class="nav-link" href="{{ route('user.rental-equipment.booking') }}"><i class="bi-calendar-event"></i>
                 Rental
                 Equipment Bookings </a>
-            <a class="nav-link" href="{{ route('user.messages') }}"><i class="bi bi-chat-dots-fill me-2"></i>
-                Messages </a>
         @endif
+        <a class="nav-link" href="{{ route('chat.conversations') }}"><i class="bi bi-chat-dots-fill me-2"></i>
+            Messages </a>
+
+        <a class="nav-link" href="{{ route('farming.chat') }}"><i class="bi bi-robot me-2"></i>
+            AI Farming Chat </a>
+
+
+
         <a href="{{ route('packages') }}" class="nav-link"><i class="bi bi-journal-text me-2"></i> Package</a>
         <a href="#" class="nav-link"><i class="bi bi-person-lines-fill me-2"></i> Help</a>
 

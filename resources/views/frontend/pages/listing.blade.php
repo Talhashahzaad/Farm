@@ -91,17 +91,17 @@
                                         <a href="{{ route('listing.show', $listing->slug) }}">
                                             <h5 class="card-title">{{ truncate($listing->title) }}</h5>
                                         </a>
-                                        <ul>
+                                        {{-- <ul>
                                             <li class="card-text mb-1"><strong>Qty:</strong> 50 Tons</li>
                                             <li class="card-text mb-1"><strong>Price:</strong> $2/kg</li>
-                                        </ul>
+                                        </ul> --}}
                                         <p class="card-text text-muted"><img
                                                 src="{{ asset('frontend/images/icons/location-icon.svg') }}"
                                                 alt="location">
                                             {{ $listing->location->name }}
                                         </p>
-                                        <a href="#" class="text-success">More <img
-                                                src="{{ asset('frontend/images/icons/next-icon.svg') }}" alt="next-icon">
+                                        <a href="{{ route('listing.show', $listing->slug) }}" class="text-success">More
+                                            <img src="{{ asset('frontend/images/icons/next-icon.svg') }}" alt="next-icon">
                                         </a>
                                     </div>
                                 </div>

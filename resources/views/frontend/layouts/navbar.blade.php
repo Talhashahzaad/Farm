@@ -5,7 +5,9 @@
             <div class="logo-sec">
                 <a class="text-white text-decoration-none" href="{{ route('home') }}" role="button" id="logo-n"
                     aria-expanded="false">
-                    <img src="{{ asset('frontend/images/farm-ily-logo.svg.svg') }}" alt="Farm Logo" class="me-2">
+                    <img src="{{ config('settings.logo') }}" alt="Farmfusion" class="me-2">
+
+                    {{-- {{ asset('frontend/images/farm-ily-logo.svg') }} --}}
                 </a>
             </div>
 
@@ -96,9 +98,8 @@
                                             class="me-2">
                                         <div>
                                             <small>Reach to us</small><br>
-                                            <strong><a href="tel:+2500 25 578 750"
-                                                    class="text-white text-decoration-none">+2500 25 578
-                                                    750</a></strong>
+                                            <strong><a href="tel:{{ config('settings.site_phone') }}"
+                                                    class="text-white text-decoration-none">{{ config('settings.site_phone') }}</a></strong>
                                         </div>
                                     </div>
                                 </div>

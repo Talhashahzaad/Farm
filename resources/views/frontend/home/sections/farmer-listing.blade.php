@@ -4,32 +4,32 @@
 
         <!-- Owl Carousel Wrapper -->
         <div class="owl-carousel owl-theme farmer-carousel">
-
-            <!-- Card 1 -->
-            <div class="item">
-                <div class="card">
-                    <div class="card-img"><img src="{{ asset('frontend/images/farmer-carousel-img/Figure-01.png') }}"
-                            class="card-img-top" alt="Potato"></div>
-                    <div class="card-body">
-                        <h5 class="card-title">Potato</h5>
-                        <ul>
+            @foreach ($listings as $listing)
+                <!-- Card 1 -->
+                <div class="item">
+                    <div class="card">
+                        <div class="card-img"><img src="{{ asset($listing->image) }}" class="card-img-top" alt="Potato">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ truncate($listing->title) }}</h5>
+                            {{-- <ul>
                             <li>
                                 <p class="card-text"><strong>Qty:</strong> 50 Tons</p>
                             </li>
                             <li>
                                 <p class="card-text"><strong>Price:</strong> $2/kg</p>
                             </li>
-                        </ul>
-                        <p class="map-text"><i class="fas fa-map-marker-alt"></i> New York</p>
-                        <a href="#" class="text-more">More <img
-                                src="{{ asset('frontend/images/icons/green-aerow.svg') }}" alt="black-aerow">
-                        </a>
+                        </ul> --}}
+                            <p class="map-text"><i class="fas fa-map-marker-alt"></i> {{ $listing->location->name }}</p>
+                            <a href="{{ route('listing.show', $listing->slug) }}" class="text-more">More <img
+                                    src="{{ asset('frontend/images/icons/green-aerow.svg') }}" alt="black-aerow">
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            @endforeach
             <!-- Card 2 -->
-            <div class="item">
+            {{-- <div class="item">
                 <div class="card">
                     <div class="card-img"><img src="{{ asset('frontend/images/farmer-carousel-img/Figure-02.png') }}"
                             class="card-img-top" alt="Vegetables"></div>
@@ -118,7 +118,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
     </div>

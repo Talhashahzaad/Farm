@@ -13,7 +13,7 @@ class PaymentSettingProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->singleton(PaymentSettingsService::class, function(){
+        $this->app->singleton(PaymentSettingsService::class, function () {
             return new PaymentSettingsService();
         });
     }

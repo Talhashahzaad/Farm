@@ -28,21 +28,34 @@ class FrontendController extends Controller
     //
     public function index(): View
     {
-        $blogs = Blog::with(['author', 'category'])  // Load both author and category
+        $blogs = Blog::with(['author', 'category'])
             ->where('status', 1)
-            ->orderBy('id', 'Desc')
+            ->whereHas('author')     // Ensure only blogs with authors
+            ->whereHas('category')   // Ensure only blogs with categories
+            ->orderBy('id', 'desc')
             ->take(3)
             ->get();
+
+        // $blogs = Blog::with(['author', 'category'])  // Load both author and category
+        //     ->where('status', 1)
+        //     ->orderBy('id', 'Desc')
+        //     ->take(3)
+        //     ->get();
         $categories = Category::where('status', 1)->get();
         $locations = Location::where('status', 1)->get();
         $packages = Package::where('status', 1)->where('show_at_home', 1)->take(3)->get();
         $blogs = Blog::with('author')->where('status', 1)->orderBy('id', 'Desc')->take(3)->get();
-        $equipment = RentEquipment::where('status', 1)->orderBy('id', 'Desc')->take(3)->get();
+        $equipments = RentEquipment::where('status', 1)->orderBy('id', 'Desc')->take(3)->get();
+        $listings = Listing::with(['category', 'location'])
+            ->where(['status' => 1, 'is_approved' => 1])
+            ->orderBy('id', 'Desc')
+            ->take(3)
+            ->get();
 
         // If you still need all categories for another section
         $blogCategories = BlogCategory::all();  // Get all categories if needed elsewhere
 
-        return view('frontend.home.index', compact('blogs', 'blogCategories', 'equipment', 'categories', 'locations', 'packages'));
+        return view('frontend.home.index', compact('blogs', 'listings', 'blogCategories', 'equipments', 'categories', 'locations', 'packages'));
     }
 
 

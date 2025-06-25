@@ -15,9 +15,9 @@
                         partnerships.
                     </p>
                     <div class="social-icons mt-3">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://in.linkedin.com/"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -26,10 +26,10 @@
             <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
                 <h5 class="footer-heading">Useful Links</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="{{ route('about') }}">About Us</a></li>
                     <li><a href="#">Why Choose Us</a></li>
                     <li><a href="#">Meet Our Team</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
                     <li><a href="#">FAQs</a></li>
                 </ul>
             </div>
@@ -50,9 +50,9 @@
             <div class="col-lg-4 col-md-6">
                 <h5 class="footer-heading">Connect with us</h5>
                 <p class="support-row"> <strong><i class="fas fa-paper-plane me-2"></i> General
-                        enquiries:</strong> support@example.com</p>
+                        enquiries:</strong> {{ config('settings.site_email') }}</p>
                 <p class="support-row support-call"><strong><i class="fas fa-headset me-2"></i> Give us a
-                        call:</strong> <span class="text-white">+2500 25 578 750</span></p>
+                        call:</strong> <span class="text-white">{{ config('settings.site_phone') }}</span></p>
             </div>
         </div>
 

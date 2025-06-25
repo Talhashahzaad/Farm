@@ -10,9 +10,16 @@ use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\RentEquipmentController;
-use App\Http\Controllers\PaymentController;;
-// use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ChatController as GlobalChatController;
+use App\Http\Controllers\FarmingBotController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/chat', fn() => view('frontend.dashboard.farming.chat'))->name('farming.chat');
+Route::post('/chatbot/respond', [FarmingBotController::class, 'respond'])->name('chatbot.respond');
+// Route::post('/chatbot/respond', [FarmingBotController::class, 'respond'])->name('chatbot.respond');
+// Route::get('/farming-chat', fn() => view('frontend.dashboard.farming.chat'))->name('farming.chat');
+// Route::post('/farming-chat/ask', [FarmingBotController::class, 'ask'])->name('farming.chat.ask');
 
 Route::get('/', [FrontendController::class, 'index'])->name('home');
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
@@ -101,6 +108,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('stripe/payment', [PaymentController::class, 'payWithStripe'])->name('stripe.payment');
     Route::get('stripe/success', [PaymentController::class, 'stripeSuccess'])->name('stripe.success');
     Route::get('stripe/cancel', [PaymentController::class, 'stripeCancel'])->name('stripe.cancel');
+
+    Route::get('/chat/with-user/{listing}', [GlobalChatController::class, 'chatWithUser'])->name('chat.withUser');
+    Route::post('/chat/send', [GlobalChatController::class, 'send'])->name('chat.send');
+    Route::get('/chat/messages/{userId}', [GlobalChatController::class, 'fetchMessages'])->name('chat.fetch');
+    Route::get('/chat/conversations', [GlobalChatController::class, 'conversations'])->name('chat.conversations');
+    Route::get('/chat/with-user-direct/{user}', [GlobalChatController::class, 'chatDirect'])->name('chat.withUser.direct');
 });
 
 

@@ -188,20 +188,18 @@
                             </div>
                         @endif
 
-                        {{-- <div class="contact-sidebar mb-4">
+                        <div class="contact-sidebar mb-4">
                             <h3>Hours</h3>
 
                             <ul class="hours-list">
 
-                                <li><span> Monday </span> 9:OOam – 10:00 pm</li>
-                                <li><span> Monday </span> 9:OOam – 10:00 pm</li>
-                                <li><span> Monday </span> 9:OOam – 10:00 pm</li>
-                                <li><span> Monday </span> 9:OOam – 10:00 pm</li>
-                                <li><span> Monday </span> 9:OOam – 10:00 pm</li>
-                                <li><span> Monday </span> 9:OOam – 10:00 pm</li>
+                                <li><span> Message </span> <a
+                                        href="{{ route('chat.withUser', ['listing' => $listing->id]) }}">Chat</a></li>
+
                             </ul>
 
-                        </div> --}}
+                        </div>
+
                     </div>
                 </div>
             </div>

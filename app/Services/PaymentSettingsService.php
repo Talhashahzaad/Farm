@@ -5,9 +5,21 @@ namespace App\Services;
 use App\Models\PaymentSetting;
 use App\Models\Setting;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Schema;
 
 class PaymentSettingsService
 {
+    // public $settings;
+
+    // public function __construct()
+    // {
+    //     // Prevent error before 'cache' table is created
+    //     if (Schema::hasTable('cache')) {
+    //         $this->settings = Cache::get('laravel_cache_payment');
+    //     } else {
+    //         $this->settings = [];
+    //     }
+    // }
 
     function getSettings()
     {

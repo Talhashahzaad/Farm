@@ -8,7 +8,38 @@
 
          <div class="row">
              <!-- Equipment 1: Heavy-Duty Tractor -->
-             <div class="col-xxl-3 col-md-6 col-xl-6 mb-4">
+             @foreach ($equipments as $equipment)
+                 <!-- Equipment Card -->
+                 <div class="col-xxl-3 col-md-6 col-xl-6 mb-4">
+                     <div class="card equipment-card shadow-sm">
+                         @if ($equipment->is_available == 1)
+                             <div class="status-tag available">● Available</div>
+                         @else
+                             <div class="status-tag booked">● Not Available </div>
+                         @endif
+                         <img src="{{ asset($equipment->image) }}" alt="Heavy-Duty Tractor" class="card-img-top">
+                         <div class="card-body">
+                             <h5 class="card-title">{{ truncate($equipment->title) }}</h5>
+                             <p class="card-text text-muted">
+                                 <img src="{{ asset('frontend/images/icons/location-icon.svg') }}" alt="location">
+                                 {{ $equipment->location->name }}
+                             </p>
+                             <h5 class="card-feat-title">By - {{ $equipment->user->name }}</h5>
+                             <p class="card-text">{{ $equipment->description }}</p>
+                             <h5 class="card-feat-title">Features :</h5>
+                             <ul class="features-list">
+                                 {!! $equipment->feature !!}
+                             </ul>
+                             <p class="price">Price: <strong>${{ $equipment->price_per_day }}/day</strong> |
+                                 <strong>${{ $equipment->price_per_day }}/week</strong>
+                             </p>
+                             <a href="{{ route('equipment') }}" class="btn rent-btn" data-bs-toggle="modal"
+                                 data-bs-target="#rentModal{{ $equipment->id }}">Rent Now</a>
+                         </div>
+                     </div>
+                 </div>
+             @endforeach
+             {{-- <div class="col-xxl-3 col-md-6 col-xl-6 mb-4">
                  <div class="card equipment-card shadow-sm">
                      <div class="status-tag available">● Available</div>
                      <img src="{{ asset('frontend/images/equip-01.webp') }}" alt="Heavy-Duty Tractor"
@@ -29,9 +60,9 @@
                          <a href="#" class="btn rent-btn">Rent Now</a>
                      </div>
                  </div>
-             </div>
+             </div> --}}
 
-             <!-- Equipment 2: Combine Harvester -->
+             {{-- <!-- Equipment 2: Combine Harvester -->
              <div class="col-xxl-3 col-md-6 col-xl-6 mb-4">
                  <div class="card equipment-card shadow-sm">
                      <div class="status-tag booked">● Booked Until Oct 15</div>
@@ -99,12 +130,12 @@
                          <a href="#" class="btn rent-btn">Rent Now</a>
                      </div>
                  </div>
-             </div>
+             </div> --}}
          </div>
 
          <!-- View All Button -->
          <div class="text-center mt-4">
-             <a href="#" class="btn custom-btn-color btn-lg mt-3">View All</a>
+             <a href="{{ route('equipment') }}" class="btn custom-btn-color btn-lg mt-3">View All</a>
          </div>
      </div>
  </section>

@@ -63,8 +63,9 @@
                         <div class="col-lg-4">
                             <!-- CTA Buttons -->
                             <div class="cta-buttons mt-4">
-                                <a href="#" class="btn custom-btn-color btn-lg">Register As Farmer</a>
-                                <a href="#" class="btn custom-trans-btn btn-lg">Register As Buyer</a>
+                                <a href="{{ route('farmer.register') }}" class="btn custom-btn-color btn-lg">Register As
+                                    Farmer</a>
+                                <a href="{{ route('register') }}" class="btn custom-trans-btn btn-lg">Register As Buyer</a>
                             </div>
                         </div>
 
